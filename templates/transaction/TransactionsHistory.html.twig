@@ -1,0 +1,44 @@
+{% extends 'transaction/index.html.twig' %}
+
+{% block body %}
+    <section class="transfer-section">
+        <div class="transfer-section-header">
+            <h2>Latest transfers</h2>
+            <div class="filter-options">
+
+                <button class="icon-button">
+                    <i class="ph-funnel"></i>
+                </button>
+
+            </div>
+        </div>
+        {% for tran in transac %}
+        <div class="transfers">
+            <div class="transfer">
+                <div class="transfer-logo">
+                    {{ tran.id }}
+                </div>
+                <dl class="transfer-details">
+                    <div>
+                        <dt>{{  tran.typeTransaction.name}}</dt>
+
+                    </div>
+                    <div>
+                        <dt>{{ tran.date|date('Y-m-d H:i:s')  }}</dt>
+
+                    </div>
+                    <div>
+                        <dt>{{ tran.compteRecus }}</dt>
+
+                    </div>
+                </dl>
+                <div class="transfer-number">
+                    {{tran.montant }} TND
+                </div>
+            </div>
+
+
+        </div>
+        {% endfor %}
+    </section>
+{% endblock %}

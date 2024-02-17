@@ -1,0 +1,14 @@
+{% extends 'transaction/index.html.twig' %}
+{% block body %}
+{{ form_start(form) }}
+<table>
+    <tr>
+        <td>{{ form_label(form.montant) }}</td>
+        <td>{{ form_widget(form.montant) }}</td>
+    </tr>
+
+</table>
+
+{{ form_widget(form.save) }}
+{{ form_end(form) }}
+{% endblock %}
